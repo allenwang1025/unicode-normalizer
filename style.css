@@ -43,6 +43,28 @@ label {
   margin-bottom: 0.35rem;
 }
 
+.label-with-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: default;
+}
+
+.label-with-checkbox .checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.label-with-checkbox input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+
 #text-input {
   width: 100%;
   padding: 0.75rem 1rem;

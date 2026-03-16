@@ -1,6 +1,7 @@
 (function () {
   const input = document.getElementById('text-input');
   const normalization = document.getElementById('normalization');
+  const showCodepoints = document.getElementById('show-codepoints');
   const outputText = document.getElementById('output-text');
   const outputCodepoints = document.getElementById('output-codepoints');
 
@@ -30,6 +31,7 @@
     if (codePoints.length === 0) {
       return;
     }
+    const showCodes = showCodepoints.checked;
     codePoints.forEach(function (item) {
       const u = formatCodePoint(item.code);
       const href = 'https://www.compart.com/en/unicode/' + u;
@@ -40,7 +42,7 @@
         '<span class="char" title="' + escapeHtml(item.char) + '">' +
         escapeHtml(displayChar(item.char)) +
         '</span></a>' +
-        '<span class="code">' + u + '</span>';
+        (showCodes ? '<span class="code">' + u + '</span>' : '');
       outputCodepoints.appendChild(span);
     });
   }
@@ -63,6 +65,7 @@
     setTimeout(render, 0);
   });
   normalization.addEventListener('change', render);
+  showCodepoints.addEventListener('change', render);
 
   render();
 })();
