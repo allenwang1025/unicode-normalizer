@@ -31,14 +31,19 @@
       return;
     }
     codePoints.forEach(function (item) {
-      const span = document.createElement('span');
-      span.className = 'cp-item';
-      span.innerHTML =
+      const u = formatCodePoint(item.code);
+      const href = 'https://www.compart.com/en/unicode/' + u;
+      const a = document.createElement('a');
+      a.className = 'cp-item';
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.innerHTML =
         '<span class="char" title="' + escapeHtml(item.char) + '">' +
         escapeHtml(displayChar(item.char)) +
         '</span>' +
-        '<span class="code">' + formatCodePoint(item.code) + '</span>';
-      outputCodepoints.appendChild(span);
+        '<span class="code">' + u + '</span>';
+      outputCodepoints.appendChild(a);
     });
   }
 
