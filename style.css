@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  background: #0f0f12;
+  color: #e4e4e7;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+.input-group,
+.output-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #a1a1aa;
+  margin-bottom: 0.35rem;
+}
+
+#text-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  color: #e4e4e7;
+  resize: vertical;
+}
+
+#text-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+#text-input::placeholder {
+  color: #52525b;
+}
+
+#normalization {
+  width: 100%;
+  max-width: 12rem;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font: inherit;
+  font-size: 1rem;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  color: #e4e4e7;
+  cursor: pointer;
+}
+
+#normalization:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.output-box {
+  min-height: 4rem;
+  padding: 0.75rem 1rem;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.output-box:empty::before {
+  content: "—";
+  color: #52525b;
+}
+
+.output-box.codepoints {
+  font-family: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.cp-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0.25rem 0.25rem 0;
+  padding: 0.15rem 0.4rem;
+  background: #27272a;
+  border-radius: 4px;
+}
+
+.cp-item .char {
+  min-width: 1.2em;
+  text-align: center;
+}
+
+.cp-item .code {
+  color: #a1a1aa;
+  font-size: 0.85em;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicode Normalizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Unicode Normalizer</h1>
+    <p class="subtitle">Enter text and choose a normalization form. View the result and each character's code point.</p>
+
+    <div class="input-group">
+      <label for="text-input">Input text</label>
+      <textarea id="text-input" rows="4" placeholder="Type or paste text here…"></textarea>
+    </div>
+
+    <div class="input-group">
+      <label for="normalization">Normalization form</label>
+      <select id="normalization">
+        <option value="none">none</option>
+        <option value="NFC">NFC</option>
+        <option value="NFD">NFD</option>
+        <option value="NFKC">NFKC</option>
+        <option value="NFKD">NFKD</option>
+      </select>
+    </div>
+
+    <div class="output-group">
+      <label>Output text</label>
+      <div id="output-text" class="output-box" aria-live="polite"></div>
+    </div>
+
+    <div class="output-group">
+      <label>Code points</label>
+      <div id="output-codepoints" class="output-box codepoints" aria-live="polite"></div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
