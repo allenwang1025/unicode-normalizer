@@ -113,12 +113,15 @@ label {
   padding: 0.15rem 0.4rem;
   background: #27272a;
   border-radius: 4px;
+}
+
+.cp-item .cp-char-link {
   color: inherit;
   text-decoration: none;
 }
 
-.cp-item:hover {
-  background: #3f3f46;
+.cp-item .cp-char-link:hover {
+  text-decoration: underline;
 }
 
 .cp-item .char {
@@ -129,4 +132,5 @@ label {
 .cp-item .code {
   color: #a1a1aa;
   font-size: 0.85em;
+  user-select: text;
 }

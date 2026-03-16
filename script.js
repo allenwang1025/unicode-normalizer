@@ -33,17 +33,15 @@
     codePoints.forEach(function (item) {
       const u = formatCodePoint(item.code);
       const href = 'https://www.compart.com/en/unicode/' + u;
-      const a = document.createElement('a');
-      a.className = 'cp-item';
-      a.href = href;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.innerHTML =
+      const span = document.createElement('span');
+      span.className = 'cp-item';
+      span.innerHTML =
+        '<a href="' + escapeHtml(href) + '" target="_blank" rel="noopener noreferrer" class="cp-char-link" title="View on Compart">' +
         '<span class="char" title="' + escapeHtml(item.char) + '">' +
         escapeHtml(displayChar(item.char)) +
-        '</span>' +
+        '</span></a>' +
         '<span class="code">' + u + '</span>';
-      outputCodepoints.appendChild(a);
+      outputCodepoints.appendChild(span);
     });
   }
 
